@@ -14,22 +14,33 @@
  * limitations under the License.
  */
 
-package main
+package env
 
 import (
-	"os"
+	"strings"
 
-	"github.com/paketo-buildpacks/libpak"
-	"github.com/paketo-buildpacks/libpak/bard"
-
-	"github.com/paketo-buildpacks/environment-variables/env"
+	"github.com/buildpacks/libcnb"
 )
 
-func main() {
-	libpak.Main(
-		env.Detect{},
-		env.Build{
-			Logger: bard.NewLogger(os.Stdout),
-		},
-	)
+type Detect struct{}
+
+func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) {
+	for key, _ := range context.Platform.Environment {
+		if strings.HasPrefix(key, "BPE_") {
+			return libcnb.DetectResult{
+				Pass: true,
+				Plans: []libcnb.BuildPlan{
+					{
+						Provides: []libcnb.BuildPlanProvide{
+							{Name: "environment-variables"},
+						},
+						Requires: []libcnb.BuildPlanRequire{
+							{Name: "environment-variables"},
+						},
+					},
+				},
+			}, nil
+		}
+	}
+	return libcnb.DetectResult{}, nil
 }
