@@ -26,6 +26,9 @@ id = "io.buildpacks.stacks.bionic"
 [[stacks]]
 id = "org.cloudfoundry.stacks.cflinuxfs3"
 
+[[stacks]]
+id = "org.cloudfoundry.stacks.tiny"
+
 [metadata]
 pre-package   = "scripts/build.sh"
 include-files = [

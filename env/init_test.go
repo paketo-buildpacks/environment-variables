@@ -14,22 +14,19 @@
  * limitations under the License.
  */
 
-package main
+package env_test
 
 import (
-	"os"
+	"testing"
 
-	"github.com/paketo-buildpacks/libpak"
-	"github.com/paketo-buildpacks/libpak/bard"
-
-	"github.com/paketo-buildpacks/environment-variables/env"
+	"github.com/sclevine/spec"
+	"github.com/sclevine/spec/report"
 )
 
-func main() {
-	libpak.Main(
-		env.Detect{},
-		env.Build{
-			Logger: bard.NewLogger(os.Stdout),
-		},
-	)
+func TestUnit(t *testing.T) {
+	suite := spec.New("environment-variables", spec.Report(report.Terminal{}))
+	suite("Build", testBuild)
+	suite("Detect", testDetect)
+	suite("Variables", testVariables)
+	suite.Run(t)
 }
