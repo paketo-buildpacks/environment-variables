@@ -24,10 +24,10 @@ homepage = "https://github.com/paketo-buildpacks/environment-variables"
 id = "io.buildpacks.stacks.bionic"
 
 [[stacks]]
-id = "org.cloudfoundry.stacks.cflinuxfs3"
+id = "io.paketo.stacks.tiny"
 
 [[stacks]]
-id = "org.cloudfoundry.stacks.tiny"
+id = "org.cloudfoundry.stacks.cflinuxfs3"
 
 [metadata]
 pre-package   = "scripts/build.sh"
