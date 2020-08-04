@@ -47,6 +47,6 @@ func (v Variables) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
 	})
 }
 
-func (v Variables) Name() string {
+func (Variables) Name() string {
 	return "environment-variables"
 }
