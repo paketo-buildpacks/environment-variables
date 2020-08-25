@@ -41,10 +41,9 @@ func (v Variables) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
 	v.LayerContributor.Logger = v.Logger
 
 	return v.LayerContributor.Contribute(layer, func() (libcnb.Layer, error) {
-		layer.Launch = true
 		layer.LaunchEnvironment = v.Environment
 		return layer, nil
-	})
+	}, libpak.LaunchLayer)
 }
 
 func (Variables) Name() string {
