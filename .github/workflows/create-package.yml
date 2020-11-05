@@ -166,5 +166,5 @@ jobs:
               with:
                 address: gcr.io/paketo-buildpacks/environment-variables@${{ steps.package.outputs.digest }}
                 id: paketo-buildpacks/environment-variables
-                token: ${{ secrets.JAVA_BUILDPACK_REGISTRY_TOKEN }}
+                token: ${{ secrets.JAVA_GITHUB_TOKEN }}
                 version: ${{ steps.version.outputs.version }}
