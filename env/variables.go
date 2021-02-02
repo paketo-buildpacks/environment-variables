@@ -31,9 +31,11 @@ type Variables struct {
 func NewVariables(vars map[string]string) *Variables {
 	return &Variables{
 		Environment: vars,
-		LayerContributor: libpak.NewLayerContributor("Environment Variables", map[string]interface{}{
-			"variables": vars,
-		}),
+		LayerContributor: libpak.NewLayerContributor(
+			"Environment Variables",
+			map[string]interface{}{"variables": vars},
+			libcnb.LayerTypes{Launch: true},
+		),
 	}
 }
 
@@ -43,7 +45,7 @@ func (v Variables) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
 	return v.LayerContributor.Contribute(layer, func() (libcnb.Layer, error) {
 		layer.LaunchEnvironment = v.Environment
 		return layer, nil
-	}, libpak.LaunchLayer)
+	})
 }
 
 func (Variables) Name() string {

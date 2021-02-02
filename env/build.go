@@ -91,7 +91,7 @@ func (b Build) LogConfiguration() {
 }
 
 func key(prefix string) string {
-	return prefix+`<NAME>`
+	return prefix + `<NAME>`
 }
 
 func pad(s string, length int) string {
