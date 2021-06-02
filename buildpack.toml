@@ -12,13 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api = "0.5"
+api = "0.6"
 
 [buildpack]
 id       = "paketo-buildpacks/environment-variables"
 name     = "Paketo Environment Variables Buildpack"
 version  = "{{.version}}"
 homepage = "https://github.com/paketo-buildpacks/environment-variables"
+description = "A Cloud Native Buildpack that embeds environment variables into an image"
+keywords    = ["environment-variables", "configuration"]
+
+[[buildpack.licenses]]
+type = "Apache-2.0"
+uri  = "https://github.com/paketo-buildpacks/environment-variables/blob/main/LICENSE"
 
 [[stacks]]
 id = "io.buildpacks.stacks.bionic"
