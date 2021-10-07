@@ -15,34 +15,26 @@
 api = "0.6"
 
 [buildpack]
-id       = "paketo-buildpacks/environment-variables"
-name     = "Paketo Environment Variables Buildpack"
-version  = "{{.version}}"
-homepage = "https://github.com/paketo-buildpacks/environment-variables"
-description = "A Cloud Native Buildpack that embeds environment variables into an image"
-keywords    = ["environment-variables", "configuration"]
+  description = "A Cloud Native Buildpack that embeds environment variables into an image"
+  homepage = "https://github.com/paketo-buildpacks/environment-variables"
+  id = "paketo-buildpacks/environment-variables"
+  keywords = ["environment-variables", "configuration"]
+  name = "Paketo Environment Variables Buildpack"
+  version = "{{.version}}"
 
-[[buildpack.licenses]]
-type = "Apache-2.0"
-uri  = "https://github.com/paketo-buildpacks/environment-variables/blob/main/LICENSE"
-
-[[stacks]]
-id = "io.buildpacks.stacks.bionic"
-
-[[stacks]]
-id = "io.paketo.stacks.tiny"
-
-[[stacks]]
-id = "*"
+  [[buildpack.licenses]]
+    type = "Apache-2.0"
+    uri = "https://github.com/paketo-buildpacks/environment-variables/blob/main/LICENSE"
 
 [metadata]
-pre-package   = "scripts/build.sh"
-include-files = [
-  "LICENSE",
-  "NOTICE",
-  "README.md",
-  "bin/build",
-  "bin/detect",
-  "bin/main",
-  "buildpack.toml",
-]
+  include-files = ["LICENSE", "NOTICE", "README.md", "bin/build", "bin/detect", "bin/main", "buildpack.toml"]
+  pre-package = "scripts/build.sh"
+
+[[stacks]]
+  id = "io.buildpacks.stacks.bionic"
+
+[[stacks]]
+  id = "io.paketo.stacks.tiny"
+
+[[stacks]]
+  id = "*"
