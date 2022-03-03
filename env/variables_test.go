@@ -25,7 +25,7 @@ import (
 	. "github.com/onsi/gomega"
 	"github.com/sclevine/spec"
 
-	"github.com/paketo-buildpacks/environment-variables/env"
+	"github.com/paketo-buildpacks/environment-variables/v4/env"
 )
 
 func testVariables(t *testing.T, context spec.G, it spec.S) {
