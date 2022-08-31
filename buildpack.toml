@@ -19,7 +19,7 @@ api = "0.7"
   homepage = "https://github.com/paketo-buildpacks/environment-variables"
   id = "paketo-buildpacks/environment-variables"
   keywords = ["environment-variables", "configuration"]
-  name = "Paketo Environment Variables Buildpack"
+  name = "Paketo Buildpack for Environment Variables"
   version = "{{.version}}"
   sbom-formats = ["application/vnd.cyclonedx+json", "application/vnd.syft+json"]
 
