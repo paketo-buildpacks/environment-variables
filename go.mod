@@ -1,8 +1,6 @@
 module github.com/paketo-buildpacks/environment-variables/v4
 
-go 1.23.0
-
-toolchain go1.23.6
+go 1.24
 
 require (
 	github.com/buildpacks/libcnb v1.30.4
