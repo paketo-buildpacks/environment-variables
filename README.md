@@ -1,4 +1,4 @@
-# `gcr.io/paketo-buildpacks/environment-variables`
+# `paketo-buildpacks/environment-variables`
 
 The Paketo Buildpack for Environment Variables is a Cloud Native Buildpack that embeds environment variables into an image.
 
