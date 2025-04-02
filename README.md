@@ -1,4 +1,7 @@
-# `paketo-buildpacks/environment-variables`
+# Paketo Buildpack for Environment Variables
+
+## Buildpack ID: `paketo-buildpacks/environment-variables`
+## Registry URLs: `docker.io/paketobuildpacks/environment-variables`
 
 The Paketo Buildpack for Environment Variables is a Cloud Native Buildpack that embeds environment variables into an image.
 
