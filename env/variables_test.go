@@ -17,7 +17,6 @@
 package env_test
 
 import (
-	"io/ioutil"
 	"os"
 	"testing"
 
@@ -37,7 +36,7 @@ func testVariables(t *testing.T, context spec.G, it spec.S) {
 
 	it.Before(func() {
 		var err error
-		ctx.Layers.Path, err = ioutil.TempDir("", "application-layers")
+		ctx.Layers.Path, err = os.MkdirTemp("", "application-layers")
 		Expect(err).NotTo(HaveOccurred())
 		envVars := map[string]string{
 			"some-key":  "some-val",

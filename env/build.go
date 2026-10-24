@@ -17,7 +17,6 @@
 package env
 
 import (
-	"fmt"
 	"strings"
 
 	"github.com/buildpacks/libcnb"
@@ -81,7 +80,7 @@ func (b Build) LogConfiguration() {
 			nameLength = l
 		}
 	}
-	b.Logger.Header(fmt.Sprint("Launch Configuration:"))
+	b.Logger.Header("Launch Configuration:")
 	b.Logger.Bodyf("$%s\t prepend value to $NAME, delimiting with OS path list separator", pad(key(Prefix), nameLength))
 	b.Logger.Bodyf("$%s\t append value to $NAME", pad(key(PrefixTypeAppend), nameLength))
 	b.Logger.Bodyf("$%s\t set default value for $NAME", pad(key(PrefixTypeDefault), nameLength))
