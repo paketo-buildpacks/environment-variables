@@ -25,7 +25,7 @@ import (
 type Detect struct{}
 
 func (Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error) {
-	for key, _ := range context.Platform.Environment {
+	for key := range context.Platform.Environment {
 		if strings.HasPrefix(key, "BPE_") {
 			return libcnb.DetectResult{
 				Pass: true,
